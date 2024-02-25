@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bing Wallpaper</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="download-btn">下载壁纸</button>
+    <img id="wallpaper" src="" alt="Bing Wallpaper">
+
+    <script>
+        $(document).ready(function() {
+            $('#download-btn').click(function() {
+                $.post('/download_wallpaper', function(data) {
+                    $('#wallpaper').attr('src', data);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
